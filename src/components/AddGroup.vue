@@ -19,12 +19,12 @@ export default {
     addGroup() {
       if (this.groupName.trim() !== '') {
         const newGroup = {
-          id: Date.now(), // Unique ID for the new group
+          id: Date.now(),
           name: this.groupName,
-          members: [] // Initialize with an empty array for members
+          members: []
         }
         this.$emit('groupAdded', newGroup)
-        this.groupName = '' // Reset the input field
+        this.groupName = ''
       } else {
         alert('Please enter a group name')
       }
@@ -37,10 +37,14 @@ export default {
 .input-field {
   display: block;
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   margin-bottom: 12px;
   border-radius: 4px;
   border: 1px solid #ddd;
+  transition: border 0.3s;
+}
+.input-field:focus {
+  border-color: #4caf50;
 }
 .btn-primary {
   background-color: #4caf50;
@@ -50,5 +54,9 @@ export default {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+  transition: background-color 0.3s;
+}
+.btn-primary:hover {
+  background-color: #45a049;
 }
 </style>
